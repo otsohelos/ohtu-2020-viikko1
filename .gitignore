@@ -1,1 +1,6 @@
-/temp
+*.tmp
+
+/build
+/.gradle
+
+.DS_Store
