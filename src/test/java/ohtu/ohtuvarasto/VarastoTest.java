@@ -116,7 +116,7 @@ public class VarastoTest {
   }
 
   @Test
-  public voidd miinusmaaranOttaminenPalauttaaNolla() {
+  public void miinusmaaranOttaminenPalauttaaNolla() {
     double saatuMaara = saldovarasto.otaVarastosta(-2.0);
 
     assertEquals(0.0, saatuMaara, vertailuTarkkuus);
