@@ -1,5 +1,13 @@
+
 plugins {
     id 'application' 
+    id 'jacoco'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'ohtu.ohtuvarasto.Main'
+    }
 }
 
 repositories {
