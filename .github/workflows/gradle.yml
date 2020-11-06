@@ -37,5 +37,5 @@ jobs:
           # GitHub Status Check won't become failure with a warning.
           level: error
           fail_on_error: true
-          checkstyle_config: "config/checkstyle/checkstyle.xml"
+          checkstyle_config: config/checkstyle/checkstyle.xml
 
