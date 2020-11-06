@@ -7,7 +7,7 @@ plugins {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'ohtu.ohtuvarasto.Main'
+        attributes 'Main-Class': 'paaohjelma.Main'
     }
 }
 
