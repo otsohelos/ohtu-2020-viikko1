@@ -25,14 +25,17 @@ jobs:
       run: bash <(curl -s https://codecov.io/bash)
   checkstyle_job:
     runs-on: ubuntu-latest
-    name: Checkstyle job
+    name: Checkstyle
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Run checkstyle
-      uses: nikitasavinov/checkstyle-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        reporter: 'github-pr-check'
-        tool_name: 'testtool'
-        checkstyle_config: config/checkstyle/checkstyle.xml
+      - uses: actions/checkout@v2
+      - uses: dbelyaev/action-checkstyle@v0.1.1
+        with:
+          github_token: ${{ secrets.github_token }}
+          # Change reviewdog reporter if you need [github-pr-check, github-check, github-pr-review].
+          reporter: github-pr-review
+          # Change reporter level if you need [info,warning,error].
+          # GitHub Status Check won't become failure with a warning.
+          level: error
+          fail_on_error: true
+          checkstyle_config: "config/checkstyle/checkstyle.xml"
+
