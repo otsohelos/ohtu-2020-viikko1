@@ -20,7 +20,7 @@ public class Varasto {
      { // kuormitetaan
         if (tilavuus > 0.0) { // jos varasto on käyttökelpoinen
             this.tilavuus = tilavuus;
-            this.saldo = Math.max(0.0, alkuSaldo); // jos alkuSaldo alle nolla, saldo nolla
+             this.saldo = Math.max(0.0, alkuSaldo); // jos alkuSaldo alle nolla, saldo nolla
             this.saldo = Math.min(tilavuus, this.saldo); // jos saldo yli tilavuuden, niin saldo on koko tilavuus
         } else { // jos varaston koko 0 tai negatiivinen
             this.tilavuus = 0.0;
