@@ -23,19 +23,5 @@ jobs:
       run: ./gradlew jacocoTestReport
     - name: Data to codecov
       run: bash <(curl -s https://codecov.io/bash)
-  checkstyle_job:
-    runs-on: ubuntu-latest
-    name: Checkstyle
-    steps:
-      - uses: actions/checkout@v2
-      - uses: dbelyaev/action-checkstyle@v0.1.1
-        with:
-          github_token: ${{ secrets.github_token }}
-          # Change reviewdog reporter if you need [github-pr-check, github-check, github-pr-review].
-          reporter: github-check
-          # Change reporter level if you need [info,warning,error].
-          # GitHub Status Check won't become failure with a warning.
-          level: error
-          fail_on_error: true
-          checkstyle_config: "./config/checkstyle.xml"
-
+    - name: checkstyle
+      run: gradle checkstyleMain
